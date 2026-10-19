@@ -1,0 +1,37 @@
+#Nombre : Lizbet Alejandra Hernandez De la Cruz
+#Descripción: Programa que registra productos de una compra,
+# valida los datos, calcula el IVA y muestra un recibo final.
+
+n = int(input("Ingrese el número de productos que llevas: "))
+i = 1
+total = []
+total_articulos= []
+productos= []
+#esto te oregunta para ingresar tus productos
+while i <= n:
+    print("- - - - - - - - - - - - - - - - - - - - - - - - - - - ")
+    nombre_del_producto = str(input ("Ingrese el nombre del producto: "))
+    print("- - - - - - - - - - - - - - - - - - - - - - - - - - - - ")
+    precio_del_producto = float(input ("Ingrese el precio del producto: "))
+    print("- - - - - - - - - - - - - - - - - - - - - - - - - - - - ")
+    cantidad_del_producto = int(input ("Ingrese la cantidad del producto que llavas: "))
+    print("- - - - - - - - - - - - - - - - - - - - - - - - - - - ")
+    precio = precio_del_producto * cantidad_del_producto
+    i += 1
+    productos.append(nombre_del_producto)
+    total_articulos.append(cantidad_del_producto)
+    total.append(precio)
+
+#se hace el descuento del 16% iva 
+    iva = sum(total) * 0.16
+    total_con_iva = sum(total) + iva
+    print("- - - - - - - - - - - TICKET DE COMPRA - - - - - - - - - - ")
+    print("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
+    print("los productos que llevas son: ", productos)
+    print("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
+    print("total sin descunto: ", sum(total))
+    print("total a pagar con descuento : ", sum(total) - iva)
+    print("se aplico un descuento del 16% iva: ", iva)
+    print(" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
+    print("la cantidad de articulos que llevas son: ", sum(total_articulos))
+    
